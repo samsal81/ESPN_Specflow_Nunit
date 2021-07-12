@@ -23,7 +23,7 @@ namespace ESPN_Specflow_Nunit.pages
 
             Console.WriteLine("Top Headline is: " + headlinetxt);
 
-            FileStream f = new FileStream("C:\\Users\\Samsa\\source\\repos\\ESPN_Specflow_Nunit\\data\\Logoutput.txt", FileMode.Create);
+            FileStream f = new FileStream("C:\\Users\\Samsa\\source\\repos\\ESPN_Specflow_Nunit\\data\\LogOutput" + DateTime.Now.ToString("_MM-dd_HH-mm-ss") + ".txt", FileMode.Create);
 
             StreamWriter s = new StreamWriter(f);
             s.WriteLine(headlinetxt);
@@ -36,7 +36,7 @@ namespace ESPN_Specflow_Nunit.pages
         {
             Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
 
-            image.SaveAsFile("C:\\Users\\Samsa\\source\\repos\\ESPN_Specflow_Nunit\\data\\pic.png", ScreenshotImageFormat.Png);
+            image.SaveAsFile("C:\\Users\\Samsa\\source\\repos\\ESPN_Specflow_Nunit\\data\\ScreenShot"+ DateTime.Now.ToString("_MM-dd_HH-mm-ss") + ".png", ScreenshotImageFormat.Png);
         }
     }
 }
