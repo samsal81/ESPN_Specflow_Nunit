@@ -6,7 +6,7 @@ namespace ESPN_Specflow_Nunit.pages
 {
     class homePage
     {
-        IWebDriver driver;
+        readonly IWebDriver driver;
         public homePage(IWebDriver driver)
         {
             this.driver = driver;
@@ -14,12 +14,12 @@ namespace ESPN_Specflow_Nunit.pages
 
         //By TopHeadline = By.XPath("//div/section[3]/div[1]/section/ul/li[1]/a");
 
-        public void saveHeadline()
+        public void SaveHeadline()
         {
 
             string headlinetxt = driver.FindElement(By.XPath("//div/section[3]/div[1]/section/ul/li[1]/a")).Text;
 
-            Console.WriteLine("Top Headline is: " + headlinetxt);
+            Console.WriteLine($"Top Headline is: {headlinetxt}");
 
             FileStream f = new FileStream("C:\\Users\\Samsa\\source\\repos\\ESPN_Specflow_Nunit\\data\\LogOutput" + DateTime.Now.ToString("_MM-dd_HH-mm-ss") + ".txt", FileMode.Create);
 
@@ -30,7 +30,7 @@ namespace ESPN_Specflow_Nunit.pages
             f.Close();
         }
 
-        public void screenshot()
+        public void Screenshot()
         {
             Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
 

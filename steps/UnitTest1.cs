@@ -14,7 +14,7 @@ namespace ESPN_Specflow_Nunit
         homePage homeP;
 
         [Before]
-        public void start()
+        public void Start()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
@@ -32,17 +32,17 @@ namespace ESPN_Specflow_Nunit
         [Then(@"save first headline to a text file")]
         public void GivenSaveFirstHeadlineToATextFile()
         {
-            homeP.saveHeadline();
+            homeP.SaveHeadline();
         }
         
         [Then(@"take a screenshot of the home screenshot")]
         public void ThenTakeAScreenshotOfTheHomeScreenshot()
         {
-            homeP.screenshot();
+            homeP.Screenshot();
         }
 
         [After]
-        public void closeBrowser()
+        public void CloseBrowser()
         {
             driver.Close();
             driver.Quit();
