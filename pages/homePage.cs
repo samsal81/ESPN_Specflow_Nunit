@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ESPN_Specflow_Nunit.pages
 {
@@ -19,7 +17,7 @@ namespace ESPN_Specflow_Nunit.pages
         public void saveHeadline()
         {
 
-            String headlinetxt = driver.FindElement(By.XPath("//div/section[3]/div[1]/section/ul/li[1]/a")).Text;
+            string headlinetxt = driver.FindElement(By.XPath("//div/section[3]/div[1]/section/ul/li[1]/a")).Text;
 
             Console.WriteLine("Top Headline is: " + headlinetxt);
 
